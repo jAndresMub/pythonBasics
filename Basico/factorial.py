@@ -1,19 +1,23 @@
 # -*- coding: utf-8 -*- 
 
+number = 0
+
 def factorial(number):
-    if number > 1:
-        number = factorial(number - 1)
+    
+    if number == 0:
+        return 1
     else:
-        return number
+        return number * factorial (number - 1)
 
 
-def run(number):
-    input("Ingresa el numero del que quieres saber el factorial")
+def run():
+    
+    number = input("Ingresa el numero del que quieres saber el factorial: ")
     if (number > 2):
-        factorial(number)
+        result = factorial(number)
     else:
         print ('{}, debe ser mayor a 2'.format(number))
-    print('el factorial es {}'.format(number))
+    print('el factorial es {}'.format(result))
 if __name__ == "__main__":
-
-run(number)    
+    
+    run()    
