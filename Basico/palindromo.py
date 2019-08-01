@@ -1,28 +1,25 @@
 # -*- coding: utf-8 -*-
 
 
-def palindrome(word):
-    reversed_letters = []
-
-    for letter in word:
-        reverse_leters.insert(0, letter)
+def palindromo(word):
     
-    reversed_word ="".join(reversed_letters)
+    palabraRev = word[::-1]
 
-    if reversed_word == word:
-        return True
+    print (palabraRev)
+
+    if palabraRev == word:
+         print ("Es un palindromo")
+       
     else:
-        return False
+         print ("No es un palindromo")
 
-
+def run():
+    word = raw_input("Ingresa una palabra: ")
+    palindromo(word)
+    
 
 if __name__ == "__main__":
-    word = input("Escribe una palabra")
-    result = palindrome(word)
-
-    if result:
-        print('{}, Si es un palindromo'.format(word))
-    else:
-        print ('{}, la palabra no es un palindromo')
+    
+    run()
 
     
