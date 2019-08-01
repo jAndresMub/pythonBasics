@@ -5,7 +5,7 @@ from random import randint, uniform,random
 def compNum(numFin):
     numIni = int(input("Adivina el Numero, digita uno: "))
     while numFin != numIni:
-        print('el numero digitado es {}, y el numero a adivinar es {}'.format(numIni, numFin))
+        
         if (numIni > numFin):
             print("No acertaste, el numero a adivinar es menor")
         else:
@@ -21,7 +21,6 @@ def genNum():
 def run():
     print ("Vamos a comenzar, tienes que adivinar un numero del 1 al 100 ")
     numFin = genNum()
-    print(numFin)
     compNum(numFin)
     print("Felicitaciones acertaste!!!") 
 
