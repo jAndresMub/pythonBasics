@@ -9,7 +9,7 @@ countries = {
 }
 def run():
     while True:
-        country = str(raw_input('ingresa el nombre de un pais')).lower()
+        country = str(raw_input('Ingresa el nombre de un pais: ')).lower()
         try:
             print('la poblacion de {} es: {} millones'.format(country, countries[country]))
         except KeyError:
