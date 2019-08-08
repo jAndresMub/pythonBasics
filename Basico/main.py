@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from lamp import Lamp
+
 def run():
     lamp = Lamp(_is_turned_on = True)
 
