@@ -36,8 +36,11 @@ class ContactBook:
                 del self._contacts[idx]
                 break
 
-
-
+    def search(self, name):
+        for idx, contact in enumerate(self.contacts):
+            if contact.name.lower() == name.lower():
+                print (self.contacts[idx])
+                break
 
 def run():
 
@@ -65,7 +68,10 @@ def run():
         elif command =='ac':
             print('actualizar contacto')
         elif command == 'b':
-            print('buscar contacto')
+            
+            name = str(raw_input('Ingrese el nombre del contacto que quiere biscar'))
+            contact_book.search(name)
+
         elif command == 'e':
             
             name = str(raw_input('Ingrese el nombre del contacto que quiere eliminar: '))
