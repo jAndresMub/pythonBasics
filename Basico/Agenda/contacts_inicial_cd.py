@@ -37,11 +37,17 @@ class ContactBook:
                 break
 
     def search(self, name):
-        for idx, contact in enumerate(self.contacts):
+        for idx, contact in enumerate(self._contacts):
             if contact.name.lower() == name.lower():
-                print (self.contacts[idx])
+                self._print_contact(contact)
                 break
-
+            else:
+                self._not_found(contact)
+    
+    def _not_found(self, name):
+        print('--- * --- * --- * --- * --- * --- * --- * ---')
+        print('No encontramos el contacto: {}'.format(contact.name))
+                
 def run():
 
     contact_book =ContactBook()
@@ -69,13 +75,14 @@ def run():
             print('actualizar contacto')
         elif command == 'b':
             
-            name = str(raw_input('Ingrese el nombre del contacto que quiere biscar'))
+            name = str(raw_input('Ingrese el nombre del contacto que quiere buscar: '))
             contact_book.search(name)
 
         elif command == 'e':
             
             name = str(raw_input('Ingrese el nombre del contacto que quiere eliminar: '))
             contact_book.delete(name)
+        
         elif command == 'l':
             
             contact_book._show_all()
