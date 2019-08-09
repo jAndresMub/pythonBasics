@@ -1,4 +1,27 @@
+# -*- coding: utf-8 -*-
+
+class Contact:
+
+
+    def __init__(self, name, phone, email):
+        self._name = name
+        self._phone = phone
+        self.email = email
+
+class ContactBook:
+
+    def __init__(self):
+        self.contcts = []
+    
+    def add(self, name, phone, email):
+        print('name: {}, phone: {}, email: {}'.format(name, phone, email))
+
+
+
 def run():
+
+    contact_book =ContactBook()
+
 
     while True:
         command = str(raw_input('''
@@ -12,7 +35,12 @@ def run():
         '''))
 
         if command == 'a':
-            print('añadir contacto')
+            name = str(raw_input('Ingresa el nombre del contacto: '))
+            phone = str(raw_input('Ingresa el numero del contacto: '))
+            email = str(raw_input('Ingreas el e-mail del contacto: '))
+            
+            contact_book.add(name, phone, email)
+
         elif command =='ac':
             print('actualizar contacto')
         elif command == 'b':
