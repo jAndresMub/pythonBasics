@@ -30,6 +30,14 @@ class ContactBook:
         print('E-mail: {}'.format(contact.email))
         print('--- * --- * --- * --- * --- * --- * --- * ---')
 
+    def delete(self, name):
+        for idx, contact in enumerate(self._contacts):
+            if contact.name.lower() == name.lower():
+                del self._contacts[idx]
+                break
+
+
+
 
 def run():
 
@@ -59,8 +67,9 @@ def run():
         elif command == 'b':
             print('buscar contacto')
         elif command == 'e':
-            print('eliminar contacto')    
-        
+            
+            name = str(raw_input('Ingrese el nombre del contacto que quiere eliminar: '))
+            contact_book.delete(name)
         elif command == 'l':
             
             contact_book._show_all()
