@@ -4,18 +4,31 @@ class Contact:
 
 
     def __init__(self, name, phone, email):
-        self._name = name
-        self._phone = phone
+        self.name = name
+        self.phone = phone
         self.email = email
 
 class ContactBook:
 
     def __init__(self):
-        self.contcts = []
+        self._contacts = []
     
     def add(self, name, phone, email):
-        print('name: {}, phone: {}, email: {}'.format(name, phone, email))
+        contact = Contact(name, phone, email)
+        self._contacts.append(contact)
 
+    def _show_all(self):
+
+        for contact in self._contacts:
+            self._print_contact(contact)
+
+    def _print_contact(self, contact):
+
+        print('--- * --- * --- * --- * --- * --- * --- * ---')
+        print('Nombre: {}'.format(contact.name))
+        print('Telefono: {}'.format(contact.phone))
+        print('E-mail: {}'.format(contact.email))
+        print('--- * --- * --- * --- * --- * --- * --- * ---')
 
 
 def run():
@@ -47,8 +60,11 @@ def run():
             print('buscar contacto')
         elif command == 'e':
             print('eliminar contacto')    
+        
         elif command == 'l':
-            print('listar contactos')
+            
+            contact_book._show_all()
+
         elif command == 's':
             break
         else:
